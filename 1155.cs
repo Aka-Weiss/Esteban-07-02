@@ -1,23 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
-namespace Exercicio1155
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            double s = 0;
-            for (int i = 1; i <= 100; i++)
-            {
-                s += 1.0 / i;
-            }
-            Console.WriteLine($"{s:F2}");
-            Console.ReadKey();
+class URI {
+    static void Main(string[] args) {
+        double S = 0.0;
+        for(int i = 1; i < 101; ++i){
+            S += 1.0/i;
         }
-
+        Console.WriteLine($"{S:0.00}");
     }
 }
