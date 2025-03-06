@@ -1,21 +1,25 @@
 using System;
-using System.Runtime;
 
-class URI {    
-    static void Main(string[] args) {
-        int X = int.Parse(Console.ReadLine());
-        int Y = int.Parse(Console.ReadLine());
-        
-        if(X > Y){
-            int temp = X;
-            X = Y;
-            Y = temp;
+class Programa
+{
+    static void Main(string[] args)
+    {
+        int inicio = int.Parse(Console.ReadLine());
+        int fim = int.Parse(Console.ReadLine());
+
+        if (inicio > fim)
+        {
+            int temp = inicio;
+            inicio = fim;
+            fim = temp;
         }
-        X += (Math.Abs(X) % 2) + 1;
-        Y -= (Math.Abs(Y) % 2) + 1;
-        
+
+        inicio += (Math.Abs(inicio) % 2) + 1;
+        fim -= (Math.Abs(fim) % 2) + 1;
+
         int soma = 0;
-        for(int i = X; i <= Y; i += 2){
+        for (int i = inicio; i <= fim; i += 2)
+        {
             soma += i;
         }
 
