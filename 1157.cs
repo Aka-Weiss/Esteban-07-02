@@ -1,27 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
-namespace Exercicio1157
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            int n;
-            Console.WriteLine("Digite um número inteiro para mostrar todos os seus divisores positivos: ");
-            n = int.Parse(Console.ReadLine());
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= n; i++)
-            {
-                if (n % i == 0)
-                {
-                    Console.WriteLine(i);
-                }
+        for(int i = 1; i <= N; ++i){
+            if(N % i == 0){
+                Console.WriteLine(i);
             }
-            Console.ReadKey();
         }
     }
 }
