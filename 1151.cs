@@ -1,40 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
-namespace Exercicio1151
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            int n;
-            Console.WriteLine("Digite um número inteiro de 1 a 45: ");
-            n = int.Parse(Console.ReadLine());
+class URI {
+    static int[] F;
 
-            if (n <= 0 || n >= 46)
-            {
-                Console.WriteLine("Número fora do intervalo mencionado!");
-            }
-            else
-            {
-                int[] fibonacci = new int[n];
-                fibonacci[0] = 0;
-                if (n > 1)
-                {
-                    fibonacci[1] = 1;
-
-                }
-                for (int i = 2; i < n; i++)
-                {
-                    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-
-                }
-                Console.WriteLine(string.Join(" ", fibonacci));
-                Console.ReadKey();
-            }
+    static int Fibonacci(int n){
+        if(F[n] == -1){
+            F[n] = Fibonacci(n - 2) + Fibonacci(n - 1);
         }
+        return F[n];
+    }
+
+    static void Main(string[] args) {
+        F = new int[46];
+
+        F[0] = 0;
+        F[1] = 1;
+        for(int i = 2; i < 46; ++i){
+            F[i] = -1;
+        }
+
+        int N = int.Parse(Console.ReadLine());
+        Fibonacci(N);
+
+        Console.Write(F[0]);
+        for(int i = 1; i < N; ++i){
+            Console.Write($" {F[i]}");
+        }
+        Console.WriteLine("");
     }
 }
