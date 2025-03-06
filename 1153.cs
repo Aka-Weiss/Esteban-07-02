@@ -1,33 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
-namespace Exercicio1153
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            int n, resultado = 1;
-            Console.WriteLine("Digite um valor de 1 a 12: ");
-            n = int.Parse(Console.ReadLine());
+class URI {
+    static int[] F;
 
-            if (n <= 0 || n >= 13)
-            {
-                Console.WriteLine("Número fora do intervalo informado!");
-            }
-            else
-            {
-                for (int i = 1; i <= n; i++)
-                {
-                    resultado *= i;
-                }
-
-            }
-            Console.WriteLine($"O fatorial de {n} é igual a {resultado}");
-            Console.ReadKey();
+    static int Fatorial(int n){
+        if(F[n] == -1){
+            F[n] = Fatorial(n - 1) * n;
         }
+        return F[n];
+    }
+    
+    static void Main(string[] args) {
+        F = new int[14];
+        
+        F[0] = 1;
+        for(int i = 1; i < 14; ++i){
+            F[i] = -1;
+        }
+
+        int N = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(Fatorial(N));
     }
 }
