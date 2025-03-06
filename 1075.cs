@@ -1,12 +1,15 @@
 using System;
 
-class URI {
-    static void Main(string[] args) {
-        int N;
+class Programa
+{
+    static void Main(string[] args)
+    {
+        int intervalo;
 
-        N = int.Parse(Console.ReadLine());
+        intervalo = int.Parse(Console.ReadLine());
 
-        for(int i = 2; i < 10000; i += N){
+        for (int i = intervalo; i < 10000; i += intervalo)
+        {
             Console.WriteLine(i);
         }
     }
