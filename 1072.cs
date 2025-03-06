@@ -1,21 +1,25 @@
 using System;
 
-class URI {
-    static void Main(string[] args) {
-        int N, X;
+class Programa
+{
+    static void Main(string[] args)
+    {
+        int quantidade, numero;
 
-        N = int.Parse(Console.ReadLine());
+        quantidade = int.Parse(Console.ReadLine());
 
-        int incluso = 0;
-        for(int i = 0; i < N; ++i){
-            X = int.Parse(Console.ReadLine());
+        int dentroIntervalo = 0;
+        for (int i = 0; i < quantidade; ++i)
+        {
+            numero = int.Parse(Console.ReadLine());
 
-            if(10 <= X && X <= 20){
-                ++incluso;
+            if (10 <= numero && numero <= 20)
+            {
+                ++dentroIntervalo;
             }
         }
 
-        Console.WriteLine($"{incluso} in");
-        Console.WriteLine($"{N - incluso} out");
+        Console.WriteLine($"{dentroIntervalo} in");
+        Console.WriteLine($"{quantidade - dentroIntervalo} out");
     }
 }
